@@ -10,10 +10,10 @@ State_FixedStand::State_FixedStand(CtrlComponents *ctrlComp)
 void State_FixedStand::enter(){
     for(int i=0; i<4; i++){
         if(_ctrlComp->ctrlPlatform == CtrlPlatform::GAZEBO){
-            _lowCmd->setSimStanceGain(i);
+            _lowCmd->setSimStanceGain(i);//仿真
         }
         else if(_ctrlComp->ctrlPlatform == CtrlPlatform::REALROBOT){
-            _lowCmd->setRealStanceGain(i);
+            _lowCmd->setRealStanceGain(i);//真实
         }
         _lowCmd->setZeroDq(i);
         _lowCmd->setZeroTau(i);
