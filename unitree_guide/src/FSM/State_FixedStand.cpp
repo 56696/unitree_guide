@@ -19,8 +19,8 @@ void State_FixedStand::enter(){
         _lowCmd->setZeroTau(i);
     }
     for(int i=0; i<12; i++){
-        _lowCmd->motorCmd[i].q = _lowState->motorState[i].q;
-        _startPos[i] = _lowState->motorState[i].q;
+        _lowCmd->motorCmd[i].q = _lowState->motorState[i].q; //控制量角度 = 状态量角度
+        _startPos[i] = _lowState->motorState[i].q; //起始位置 = 状态量角度
     }
     _ctrlComp->setAllStance();
 }
