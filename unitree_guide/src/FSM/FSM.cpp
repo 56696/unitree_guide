@@ -38,7 +38,7 @@ void FSM::run(){
     _ctrlComp->runWaveGen();
     _ctrlComp->estimator->run();
     if(!checkSafty()){
-        _ctrlComp->ioInter->setPassive();
+        _ctrlComp->ioInter->setPassive();//
     }
 
     if(_mode == FSMMode::NORMAL){
